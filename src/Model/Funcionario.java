@@ -1,7 +1,8 @@
-package DTO;
+package Model;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 public class Funcionario extends Pessoa {
 
@@ -14,10 +15,20 @@ public class Funcionario extends Pessoa {
     private String senha;
     private String categoria;
     
-
+    
+    public Funcionario(){
+        
+    }
+    
     public Funcionario(String nome, String cpf, int idade, String senha, int anoIngresso,String catego ) {
-        super(nome, cpf, idade ,anoIngresso,catego );
+        super(nome,  idade, cpf,anoIngresso,catego );
         this.senha = senha;
+    }
+    
+    public Funcionario(int matricula , String senha){
+        super(matricula);
+        this.senha = senha;
+        
     }
 
     public String getSenha() {
@@ -43,6 +54,17 @@ public class Funcionario extends Pessoa {
 
     public void setCategoria(String categoria) {
         this.categoria = "Funcionario";
+    }
+    
+     public static void recarregaTicketestudante(EstudanteTicket estu, Double recarga){
+        
+        if(recarga < 0){
+            JOptionPane.showMessageDialog(null, "DIGITE UM VALOR VALIDO");
+            return;
+        }else{
+        estu.setSaldo(estu.getSaldo() + recarga);
+         estu.quantRefeicao();
+        }
     }
     
 

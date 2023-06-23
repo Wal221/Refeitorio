@@ -4,30 +4,36 @@
  */
 package Model;
 
+import DAO.CardapioDAO;
+import DAO.EstudanteDAO;
 import DAO.EstudanteTicketDAO;
 import DAO.FuncionarioDAO;
-import DTO.EstudanteTicket;
-import DTO.Funcionario;
+import Model.Cartao;
+import Model.Estudante;
+import Model.EstudanteTicket;
+import Model.Funcionario;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Administrador
  */
 public class TesteInicial {
+
     public static void main(String[] args) {
-//       Funcionario fun = new Funcionario("Walmir", "3878", 15, "2020", 2022,"Funcionario");
-//        FuncionarioDAO funcionario = new FuncionarioDAO();
-//        funcionario.save(fun);
-//        
-      
+        Cardapio car = new Cardapio("Esse representa diversos brasileiros");
+        CardapioDAO ca = new CardapioDAO();
         
-        EstudanteTicket studente = new EstudanteTicket("Isack", "7575", 22, true, 56.0, 2023);
-         EstudanteTicketDAO estudante = new EstudanteTicketDAO();
-         
-         estudante.save(studente);
-                 System.out.println(studente.getMatricula());
+        ca.selecrData(car);
+        
+        System.out.println(car.getDatacarda());
         
         
+                
+                
         
     }
 }
